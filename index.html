@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billie Eilish - Hit Me Hard and Soft Tour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-size: cover;
+            background-color: #05112e;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container {
+            margin-top: 20px;
+            border-color: #eb7a09;
+        }
+        .section-header {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            margin: 15px 0;
+            font-weight: bold;
+            color: #ffffff;
+            border-radius: 8px;
+            border-color: white;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-control, select {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: 1px #eb7a09;
+            padding: 12px;
+            width: 80%;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+        .btn-custom {
+            background: #364466;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .btn-custom:hover {
+            background: #5d1a91;
+        }
+        .ticket-img {
+            width: 350px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #bdbdbd;
+        }
+        img {
+            width: 800px;
+        }
+        .form-label {
+            color: white;
+        }
+        select {
+            color: black;
+        }
+    </style>
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.classList.toggle('hidden');
+        }
+        function submitInfo() {
+            alert("Personal information submitted successfully!");
+        }
+        function showTicketPrice() {
+            alert("VIP Experience: $200\nFront Row: $150\nGeneral Admission: $100\nBalcony View: $75");
+        }
+        function printTicket() {
+            alert("Your ticket is being prepared for printing!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Billie Eilish - Hit Me Hard and Soft Tour</h1>
+    <div class="container">
+    <img src="https://www.frontiertouring.com/files/images/pages/billie-eilish-2025/BE-Frontier-1920x500.webp?f=jpg">
+
+        <div class="section-header" onclick="toggleSection('personal-info')">Click Here: Personal Information</div>
+        <div id="personal-info" class="hidden">
+            <form onsubmit="submitInfo(); return false;">
+                <label for="name" class="form-label">Complete Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Your Name">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="your_email@example.com">
+                <button type="submit" class="btn btn-custom">SUBMIT INFO</button>
+            </form>
+        </div>
+        
+        <div class="section-header" onclick="toggleSection('ticket-price')">Click Here: Ticket Price</div>
+        <div id="ticket-price" class="hidden">
+            <label class="form-label">Choose your seat:</label>
+            <select>
+                <option>VIP Experience</option>
+                <option>Front Row</option>
+                <option>General Admission</option>
+                <option>Balcony View</option>
+            </select>
+            <button class="btn btn-custom" onclick="showTicketPrice()">TICKET PRICE</button>
+        </div>
+        
+        <div class="section-header" onclick="toggleSection('print-ticket')">Click Here: Print Ticket</div>
+        <div id="print-ticket" class="hidden">
+            <img class="ticket" src="https://media.discordapp.net/attachments/1045336816540205149/1339213152763515053/Grey_Black_Purple_Minimalist_Music_Night_Event_Ticket.jpg?ex=67ade6f0&is=67ac9570&hm=db0d1434c90a113b0b287cfac80144a7685703d713ff28e3b87874050c34a945&=&format=webp&width=2160&height=698" alt="Billie Eilish Concert Ticket">
+            <button class="btn btn-custom" onclick="printTicket()">PRINT TICKET</button>
+        </div>
+      
+    </div>
+    <footer>
+        &copy; 2025 Billie Eilish | Hit Me Hard and Soft tour
+    </footer>
+</body>
+</html>
